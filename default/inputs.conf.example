@@ -1,0 +1,36 @@
+# this is a example file. copy it to local/inputs.conf to enable inputs
+# default index is "main"
+
+[script://./bin/docker_simple_ps.sh]
+interval = 300
+disabled = false
+#index = docker
+
+[script://./bin/docker_simple_stats.sh]
+interval = 30
+disabled = false
+#index = docker
+
+[script://./bin/docker_simple_top.sh]
+interval = 300
+disabled = false
+#index = docker
+
+[script://./bin/docker_simple_events.sh]
+# special value 0 to keep this running and listening for events
+interval = 0
+disabled = false
+#index = docker
+
+[script://./bin/docker_simple_inventory.sh]
+# only enable this if you care about full inventory of containers
+interval = 86400
+disabled = true
+#index = docker
+
+
+[monitor:///var/lib/docker/containers/*/*json.log]
+disabled = false
+sourcetype = docker:jsonlogs
+#index = docker
+
