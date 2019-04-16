@@ -1,5 +1,5 @@
 # this is a example file. copy it to local/inputs.conf to enable inputs
-# default index is "main"
+# Note the default index is "main"
 
 [script://./bin/docker_simple_ps.sh]
 interval = 300
@@ -31,6 +31,6 @@ disabled = true
 
 [monitor:///var/lib/docker/containers/*/*json.log]
 disabled = false
-sourcetype = docker:jsonlogs
+sourcetype = docker:logs_json
 #index = docker
 
